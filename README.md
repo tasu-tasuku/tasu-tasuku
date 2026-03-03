@@ -1,4 +1,4 @@
-# Tasuku22 (MuratakeTasuku)
+# Tasu-tasu
 
 ## 📊 言語の内訳
 
