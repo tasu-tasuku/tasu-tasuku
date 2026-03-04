@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="340" role="img" aria-labelledby="languages_markup-title languages_markup-desc">
 <title id="languages_markup-title">Markup &amp; docs distribution</title>
-<desc id="languages_markup-desc">Markup &amp; docs distribution. SVG: 96.3%, Markdown: 3.7%</desc>
+<desc id="languages_markup-desc">Markup &amp; docs distribution. SVG: 97.1%, Markdown: 2.9%</desc>
 <defs>
-<pattern id="p0" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#0072b2"/></pattern>
-<pattern id="p1" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#e69f00"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#FFB13B"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#083FA1"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
 </defs>
 <style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>
 <text x="260" y="22" font-size="15" font-weight="bold" text-anchor="middle">Markup &amp; docs distribution</text>
-<path class="slice" d="M 160 160 L 160.000 30.000 A 130 130 0 1 1 129.983 33.513 Z" fill="url(#p0)" stroke="white" stroke-width="1.5" role="img" aria-label="SVG: 96.3%" tabindex="0"><title>SVG: 96.3%</title></path>
-<text x="169.4" y="240.1" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">96.3%</text>
-<path class="slice" d="M 160 160 L 129.983 33.513 A 130 130 0 0 1 160.000 30.000 Z" fill="url(#p1)" stroke="white" stroke-width="1.5" role="img" aria-label="Markdown: 3.7%" tabindex="0"><title>Markdown: 3.7%</title></path>
-<rect x="310" y="30" width="14" height="14" fill="url(#p0)" rx="2" stroke="#0072b2" stroke-width="1" aria-hidden="true"/>
-<text x="332" y="41" font-size="13" aria-hidden="true">SVG 96.3%</text>
-<rect x="310" y="56" width="14" height="14" fill="url(#p1)" rx="2" stroke="#e69f00" stroke-width="1" aria-hidden="true"/>
-<text x="332" y="67" font-size="13" aria-hidden="true">Markdown 3.7%</text>
+<path class="slice" d="M 160 160 L 160.000 30.000 A 130 130 0 1 1 136.457 32.150 Z" fill="url(#p0)" stroke="white" stroke-width="1.5" role="img" aria-label="SVG: 97.1%" tabindex="0"><title>SVG: 97.1%</title></path>
+<text x="167.3" y="240.3" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">97.1%</text>
+<path class="slice" d="M 160 160 L 136.457 32.150 A 130 130 0 0 1 160.000 30.000 Z" fill="url(#p1)" stroke="white" stroke-width="1.5" role="img" aria-label="Markdown: 2.9%" tabindex="0"><title>Markdown: 2.9%</title></path>
+<rect x="310" y="30" width="14" height="14" fill="url(#p0)" rx="2" stroke="#FFB13B" stroke-width="1" aria-hidden="true"/>
+<text x="332" y="41" font-size="13" aria-hidden="true">SVG 97.1%</text>
+<rect x="310" y="56" width="14" height="14" fill="url(#p1)" rx="2" stroke="#083FA1" stroke-width="1" aria-hidden="true"/>
+<text x="332" y="67" font-size="13" aria-hidden="true">Markdown 2.9%</text>
 </svg>

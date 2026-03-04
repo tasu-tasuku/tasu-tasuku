@@ -23,10 +23,75 @@ REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 OUTPUT_PROG = os.path.join(REPO_ROOT, 'languages_programming.svg')
 OUTPUT_MARK = os.path.join(REPO_ROOT, 'languages_markup.svg')
 
-MARKUP_KEYS = {'Markdown', 'HTML', 'CSS', 'SVG', 'XML'}
+MARKUP_KEYS = {'Markdown', 'HTML', 'CSS', 'SVG', 'XML', 'LaTeX', 'BibTeX'}
 
-# Colorblind-friendly palette (Okabe-Ito based)
-PALETTE = [
+# Official / iconic language colors (sourced from github-linguist and community conventions)
+LANG_COLORS: dict[str, str] = {
+    'Python':            '#3776AB',
+    'Jupyter Notebook':  '#DA5B0B',
+    'Go':                '#00ADD8',
+    'JavaScript':        '#F7DF1E',
+    'TypeScript':        '#3178C6',
+    'Java':              '#ED8B00',
+    'Kotlin':            '#7F52FF',
+    'Swift':             '#F05138',
+    'Scala':             '#DC322F',
+    'Ruby':              '#CC342D',
+    'Rust':              '#DEA584',
+    'C':                 '#555555',
+    'C++':               '#00599C',
+    'C/C++ Header':      '#6E4C13',
+    'C++ Header':        '#00599C',
+    'C#':                '#239120',
+    'PHP':               '#777BB4',
+    'Dart':              '#00B4AB',
+    'Lua':               '#000080',
+    'R':                 '#276DC3',
+    'Julia':             '#9558B2',
+    'Haskell':           '#5D4F85',
+    'Elm':               '#60B5CC',
+    'Elixir':            '#6E4A7E',
+    'Erlang':            '#B83998',
+    'F#':                '#B845FC',
+    'Fortran':           '#4D41B1',
+    'Ada':               '#02F88C',
+    'Pascal':            '#E3F171',
+    'Visual Basic':      '#945DB7',
+    'Groovy':            '#4298B8',
+    'CoffeeScript':      '#244776',
+    'Solidity':          '#AA6746',
+    'VHDL':              '#ADB2CB',
+    'Verilog':           '#B2B7F8',
+    'SystemVerilog':     '#DAE1C2',
+    'Assembly':          '#6E4C13',
+    'Lisp':              '#3FB68B',
+    'Common Lisp':       '#3FB68B',
+    'Scheme':            '#1E4AEC',
+    'OCaml':             '#EF7A08',
+    'Perl':              '#0298C3',
+    'Prolog':            '#74283C',
+    'SQL':               '#E38C00',
+    'Shell':             '#89E051',
+    'PowerShell':        '#012456',
+    # Markup
+    'HTML':              '#E44D26',
+    'CSS':               '#1572B6',
+    'Markdown':          '#083FA1',
+    'XML':               '#0060AC',
+    'JSON':              '#292929',
+    'YAML':              '#CB171E',
+    'TOML':              '#9C4221',
+    'INI':               '#D1DBE0',
+    'Config':            '#AAAAAA',
+    'Text':              '#888888',
+    'SVG':               '#FFB13B',
+    'LaTeX':             '#3D6117',
+    'BibTeX':            '#778899',
+    'Other':             '#9CA3AF',
+}
+
+# Fallback palette when a language has no registered color
+_FALLBACK_PALETTE = [
     '#0072b2', '#e69f00', '#009e73', '#cc79a7',
     '#56b4e9', '#d55e00', '#f0e442', '#999999',
     '#332288', '#88ccee',
@@ -50,19 +115,20 @@ _PATTERN_OVERLAYS = [
 ]
 
 
-def _color(i: int) -> str:
-    return PALETTE[i % len(PALETTE)]
+def _color(lang: str, fallback_index: int = 0) -> str:
+    return LANG_COLORS.get(lang, _FALLBACK_PALETTE[fallback_index % len(_FALLBACK_PALETTE)])
 
 
-def _make_defs(n: int) -> str:
-    """Return SVG <defs> with n fill patterns (color + hatch overlay)."""
+def _make_defs(items: list[tuple[str, int]]) -> str:
+    """Return SVG <defs> with fill patterns per language (color + hatch overlay)."""
     lines = ['<defs>']
-    for i in range(n):
+    for i, (lang, _) in enumerate(items):
         pid = f'p{i}'
+        color = _color(lang, i)
         overlay = _PATTERN_OVERLAYS[i % len(_PATTERN_OVERLAYS)]
         lines.append(
             f'<pattern id="{pid}" patternUnits="userSpaceOnUse" width="8" height="8">'
-            f'<rect width="8" height="8" fill="{_color(i)}"/>'
+            f'<rect width="8" height="8" fill="{color}"/>'
             f'{overlay}'
             f'</pattern>'
         )
@@ -254,7 +320,7 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
         f'role="img" aria-labelledby="{title_id} {desc_id}">',
         f'<title id="{title_id}">{html.escape(title)}</title>',
         f'<desc id="{desc_id}">{html.escape(desc_text)}</desc>',
-        _make_defs(n),
+        _make_defs(top),
         '<style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>',
         # Chart title
         f'<text x="{width // 2}" y="22" font-size="15" font-weight="bold" '
@@ -305,7 +371,7 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
         pct_label = f'{frac * 100:.1f}%'
         parts.append(
             f'<rect x="{legend_x}" y="{ly}" width="14" height="14" '
-            f'fill="url(#p{i})" rx="2" stroke="{_color(i)}" stroke-width="1" '
+            f'fill="url(#p{i})" rx="2" stroke="{_color(lang, i)}" stroke-width="1" '
             f'aria-hidden="true"/>'
         )
         parts.append(

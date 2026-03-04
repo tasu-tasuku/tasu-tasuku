@@ -1,27 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="340" role="img" aria-labelledby="languages_programming-title languages_programming-desc">
 <title id="languages_programming-title">Language distribution (programming &amp; scripts)</title>
-<desc id="languages_programming-desc">Language distribution (programming &amp; scripts). Python: 99.6%, JSON: 0.3%, Other: 0.1%</desc>
+<desc id="languages_programming-desc">Language distribution (programming &amp; scripts). Python: 99.7%, JSON: 0.3%, Other: 0.0%</desc>
 <defs>
-<pattern id="p0" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#0072b2"/></pattern>
-<pattern id="p1" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#e69f00"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p2" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#009e73"/><line x1="0" y1="4" x2="8" y2="4" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p3" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#cc79a7"/><line x1="4" y1="0" x2="4" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p4" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#56b4e9"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/><line x1="0" y1="0" x2="8" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p5" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#d55e00"/><circle cx="4" cy="4" r="1.5" fill="rgba(0,0,0,0.28)"/></pattern>
-<pattern id="p6" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#f0e442"/><line x1="0" y1="0" x2="8" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p7" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#999999"/><line x1="0" y1="2" x2="8" y2="2" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/><line x1="0" y1="6" x2="8" y2="6" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
-<pattern id="p8" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#332288"/><line x1="2" y1="0" x2="2" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/><line x1="6" y1="0" x2="6" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#3776AB"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#292929"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p2" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#9CA3AF"/><line x1="0" y1="4" x2="8" y2="4" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
 </defs>
 <style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>
 <text x="260" y="22" font-size="15" font-weight="bold" text-anchor="middle">Language distribution (programming &amp; scripts)</text>
-<path class="slice" d="M 160 160 L 160.000 30.000 A 130 130 0 1 1 156.968 30.035 Z" fill="url(#p0)" stroke="white" stroke-width="1.5" role="img" aria-label="Python: 99.6%" tabindex="0"><title>Python: 99.6%</title></path>
-<text x="160.9" y="240.6" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">99.6%</text>
-<path class="slice" d="M 160 160 L 156.968 30.035 A 130 130 0 0 1 159.567 30.001 Z" fill="url(#p1)" stroke="white" stroke-width="1.5" role="img" aria-label="JSON: 0.3%" tabindex="0"><title>JSON: 0.3%</title></path>
-<path class="slice" d="M 160 160 L 159.567 30.001 A 130 130 0 0 1 160.000 30.000 Z" fill="url(#p2)" stroke="white" stroke-width="1.5" role="img" aria-label="Other: 0.1%" tabindex="0"><title>Other: 0.1%</title></path>
-<rect x="310" y="30" width="14" height="14" fill="url(#p0)" rx="2" stroke="#0072b2" stroke-width="1" aria-hidden="true"/>
-<text x="332" y="41" font-size="13" aria-hidden="true">Python 99.6%</text>
-<rect x="310" y="56" width="14" height="14" fill="url(#p1)" rx="2" stroke="#e69f00" stroke-width="1" aria-hidden="true"/>
+<path class="slice" d="M 160 160 L 160.000 30.000 A 130 130 0 1 1 157.453 30.025 Z" fill="url(#p0)" stroke="white" stroke-width="1.5" role="img" aria-label="Python: 99.7%" tabindex="0"><title>Python: 99.7%</title></path>
+<text x="160.8" y="240.6" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">99.7%</text>
+<path class="slice" d="M 160 160 L 157.453 30.025 A 130 130 0 0 1 159.636 30.001 Z" fill="url(#p1)" stroke="white" stroke-width="1.5" role="img" aria-label="JSON: 0.3%" tabindex="0"><title>JSON: 0.3%</title></path>
+<path class="slice" d="M 160 160 L 159.636 30.001 A 130 130 0 0 1 160.000 30.000 Z" fill="url(#p2)" stroke="white" stroke-width="1.5" role="img" aria-label="Other: 0.0%" tabindex="0"><title>Other: 0.0%</title></path>
+<rect x="310" y="30" width="14" height="14" fill="url(#p0)" rx="2" stroke="#3776AB" stroke-width="1" aria-hidden="true"/>
+<text x="332" y="41" font-size="13" aria-hidden="true">Python 99.7%</text>
+<rect x="310" y="56" width="14" height="14" fill="url(#p1)" rx="2" stroke="#292929" stroke-width="1" aria-hidden="true"/>
 <text x="332" y="67" font-size="13" aria-hidden="true">JSON 0.3%</text>
-<rect x="310" y="82" width="14" height="14" fill="url(#p2)" rx="2" stroke="#009e73" stroke-width="1" aria-hidden="true"/>
-<text x="332" y="93" font-size="13" aria-hidden="true">Other 0.1%</text>
+<rect x="310" y="82" width="14" height="14" fill="url(#p2)" rx="2" stroke="#9CA3AF" stroke-width="1" aria-hidden="true"/>
+<text x="332" y="93" font-size="13" aria-hidden="true">Other 0.0%</text>
 </svg>
