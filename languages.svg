@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="380" role="img" aria-labelledby="languages-title languages-desc">
+<title id="languages-title">Language distribution</title>
+<desc id="languages-desc">Language distribution. Python: 63.6%, SVG: 35.7%, Markdown: 0.4%, JSON: 0.2%, Other: 0.0%</desc>
+<defs>
+<pattern id="p0" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#3776AB"/></pattern>
+<pattern id="p1" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#FFB13B"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p2" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#083FA1"/><line x1="0" y1="4" x2="8" y2="4" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p3" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#292929"/><line x1="4" y1="0" x2="4" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+<pattern id="p4" patternUnits="userSpaceOnUse" width="8" height="8"><rect width="8" height="8" fill="#9CA3AF"/><line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/><line x1="0" y1="0" x2="8" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/></pattern>
+</defs>
+<style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>
+<circle cx="175" cy="185" r="155" fill="#f0f0f0"/>
+<text x="175" y="16" font-size="15" font-weight="bold" text-anchor="middle">Language distribution</text>
+<path class="slice" d="M 175.000 30.000 A 155 155 0 1 1 58.013 286.681 L 118.394 234.201 A 75 75 0 1 0 175.000 110.000 Z" fill="url(#p0)" stroke="white" stroke-width="1.5" role="img" aria-label="Python: 63.6%" tabindex="0"><title>Python: 63.6%</title></path>
+<text x="279.6" y="232.7" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">63.6%</text>
+<path class="slice" d="M 58.013 286.681 A 155 155 0 0 1 168.774 30.125 L 171.987 110.061 A 75 75 0 0 0 118.394 234.201 Z" fill="url(#p1)" stroke="white" stroke-width="1.5" role="img" aria-label="SVG: 35.7%" tabindex="0"><title>SVG: 35.7%</title></path>
+<text x="69.4" y="139.4" font-size="11" fill="#fff" text-anchor="middle" dominant-baseline="middle" aria-hidden="true">35.7%</text>
+<path class="slice" d="M 168.774 30.125 A 155 155 0 0 1 173.105 30.012 L 174.083 110.006 A 75 75 0 0 0 171.987 110.061 Z" fill="url(#p2)" stroke="white" stroke-width="1.5" role="img" aria-label="Markdown: 0.4%" tabindex="0"><title>Markdown: 0.4%</title></path>
+<path class="slice" d="M 173.105 30.012 A 155 155 0 0 1 174.729 30.000 L 174.869 110.000 A 75 75 0 0 0 174.083 110.006 Z" fill="url(#p3)" stroke="white" stroke-width="1.5" role="img" aria-label="JSON: 0.2%" tabindex="0"><title>JSON: 0.2%</title></path>
+<path class="slice" d="M 174.729 30.000 A 155 155 0 0 1 175.000 30.000 L 175.000 110.000 A 75 75 0 0 0 174.869 110.000 Z" fill="url(#p4)" stroke="white" stroke-width="1.5" role="img" aria-label="Other: 0.0%" tabindex="0"><title>Other: 0.0%</title></path>
+<circle cx="175" cy="185" r="75" fill="white"/><text x="175" y="177" font-size="13" font-weight="bold" text-anchor="middle" fill="#444">Languages</text><text x="175" y="197" font-size="11" text-anchor="middle" fill="#777">5 shown</text>
+<rect x="355" y="30" width="14" height="14" fill="url(#p0)" rx="2" stroke="#3776AB" stroke-width="1" aria-hidden="true"/>
+<text x="377" y="41" font-size="13" aria-hidden="true">Python 63.6%</text>
+<rect x="355" y="58" width="14" height="14" fill="url(#p1)" rx="2" stroke="#FFB13B" stroke-width="1" aria-hidden="true"/>
+<text x="377" y="69" font-size="13" aria-hidden="true">SVG 35.7%</text>
+<rect x="355" y="86" width="14" height="14" fill="url(#p2)" rx="2" stroke="#083FA1" stroke-width="1" aria-hidden="true"/>
+<text x="377" y="97" font-size="13" aria-hidden="true">Markdown 0.4%</text>
+<rect x="355" y="114" width="14" height="14" fill="url(#p3)" rx="2" stroke="#292929" stroke-width="1" aria-hidden="true"/>
+<text x="377" y="125" font-size="13" aria-hidden="true">JSON 0.2%</text>
+<rect x="355" y="142" width="14" height="14" fill="url(#p4)" rx="2" stroke="#9CA3AF" stroke-width="1" aria-hidden="true"/>
+<text x="377" y="153" font-size="13" aria-hidden="true">Other 0.0%</text>
+</svg>

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Generate language percentage pie-chart SVGs from all GitHub repositories via the GitHub API.
+Generate a single language distribution donut-chart SVG from all GitHub repositories via the GitHub API.
 Falls back to scanning the local repository if GH_TOKEN is not set.
-Writes: languages_programming.svg and languages_markup.svg at the repo root.
+Writes: languages.svg at the repo root.
 
 Note / 表記:
 This script was created or updated with the assistance of an AI model.
@@ -20,10 +20,7 @@ except ImportError:
 
 GH_TOKEN = os.environ.get('GH_TOKEN')
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-OUTPUT_PROG = os.path.join(REPO_ROOT, 'languages_programming.svg')
-OUTPUT_MARK = os.path.join(REPO_ROOT, 'languages_markup.svg')
-
-MARKUP_KEYS = {'Markdown', 'HTML', 'CSS', 'SVG', 'XML', 'LaTeX', 'BibTeX'}
+OUTPUT = os.path.join(REPO_ROOT, 'languages.svg')
 
 # Official / iconic language colors (sourced from github-linguist and community conventions)
 LANG_COLORS: dict[str, str] = {
@@ -86,6 +83,7 @@ LANG_COLORS: dict[str, str] = {
     'Text':              '#888888',
     'SVG':               '#FFB13B',
     'LaTeX':             '#3D6117',
+    'TeX':               '#3D6117',
     'BibTeX':            '#778899',
     'Other':             '#9CA3AF',
 }
@@ -278,8 +276,8 @@ def _top_items(counter: dict, n: int = 8):
     return top
 
 
-def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
-    """Write an accessible pie-chart SVG to *outpath*."""
+def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
+    """Write an accessible donut-chart SVG to *outpath*."""
     total = sum(counter.values())
     svg_id = os.path.splitext(os.path.basename(outpath))[0]
     title_id = f'{svg_id}-title'
@@ -298,18 +296,17 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
             f.write(svg)
         return
 
-    top = _top_items(counter)
+    top = _top_items(counter, n=10)
     n = len(top)
 
     # Layout
-    width = 520
-    cx, cy, r = 160, 160, 130   # pie center and radius
-    legend_x = 310
+    width = 560
+    cx, cy, r_outer, r_inner = 175, 185, 155, 75
+    legend_x = 355
     legend_y_start = 30
-    legend_item_h = 26
-    height = max(340, legend_y_start + n * legend_item_h + 40)
+    legend_item_h = 28
+    height = max(380, legend_y_start + n * legend_item_h + 50)
 
-    # Accessible description (machine-readable summary for screen readers)
     desc_text = f'{title}. ' + ', '.join(
         f'{lang}: {size / total * 100:.1f}%' for lang, size in top
     )
@@ -322,25 +319,37 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
         f'<desc id="{desc_id}">{html.escape(desc_text)}</desc>',
         _make_defs(top),
         '<style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>',
+        # Background circle
+        f'<circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="#f0f0f0"/>',
         # Chart title
-        f'<text x="{width // 2}" y="22" font-size="15" font-weight="bold" '
+        f'<text x="{cx}" y="{cy - r_outer - 14}" font-size="15" font-weight="bold" '
         f'text-anchor="middle">{html.escape(title)}</text>',
     ]
 
-    # Pie slices
-    angle = -math.pi / 2  # start at 12 o'clock
+    # Donut slices
+    angle = -math.pi / 2
     for i, (lang, size) in enumerate(top):
         frac = size / total
         sweep = frac * 2 * math.pi
         end_angle = angle + sweep
         large = 1 if sweep > math.pi else 0
 
-        x1 = cx + r * math.cos(angle)
-        y1 = cy + r * math.sin(angle)
-        x2 = cx + r * math.cos(end_angle)
-        y2 = cy + r * math.sin(end_angle)
+        ox1 = cx + r_outer * math.cos(angle)
+        oy1 = cy + r_outer * math.sin(angle)
+        ox2 = cx + r_outer * math.cos(end_angle)
+        oy2 = cy + r_outer * math.sin(end_angle)
+        ix1 = cx + r_inner * math.cos(end_angle)
+        iy1 = cy + r_inner * math.sin(end_angle)
+        ix2 = cx + r_inner * math.cos(angle)
+        iy2 = cy + r_inner * math.sin(angle)
 
-        d = f'M {cx} {cy} L {x1:.3f} {y1:.3f} A {r} {r} 0 {large} 1 {x2:.3f} {y2:.3f} Z'
+        d = (
+            f'M {ox1:.3f} {oy1:.3f} '
+            f'A {r_outer} {r_outer} 0 {large} 1 {ox2:.3f} {oy2:.3f} '
+            f'L {ix1:.3f} {iy1:.3f} '
+            f'A {r_inner} {r_inner} 0 {large} 0 {ix2:.3f} {iy2:.3f} '
+            f'Z'
+        )
         pct_label = f'{frac * 100:.1f}%'
         aria = html.escape(f'{lang}: {pct_label}')
 
@@ -351,11 +360,12 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
             f'</path>'
         )
 
-        # Percentage label inside slice (hidden from AT; legend carries the info)
-        if frac > 0.06:
+        # Percentage label inside slice
+        if frac > 0.07:
             mid = angle + sweep / 2
-            lx = cx + r * 0.62 * math.cos(mid)
-            ly = cy + r * 0.62 * math.sin(mid)
+            lr = (r_outer + r_inner) / 2
+            lx = cx + lr * math.cos(mid)
+            ly = cy + lr * math.sin(mid)
             parts.append(
                 f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" fill="#fff" '
                 f'text-anchor="middle" dominant-baseline="middle" '
@@ -363,6 +373,15 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
             )
 
         angle = end_angle
+
+    # Center label
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{r_inner}" fill="white"/>'
+        f'<text x="{cx}" y="{cy - 8}" font-size="13" font-weight="bold" '
+        f'text-anchor="middle" fill="#444">Languages</text>'
+        f'<text x="{cx}" y="{cy + 12}" font-size="11" '
+        f'text-anchor="middle" fill="#777">{len(top)} shown</text>'
+    )
 
     # Legend
     for i, (lang, size) in enumerate(top):
@@ -397,9 +416,5 @@ if __name__ == '__main__':
         print('GH_TOKEN not set or `requests` unavailable — scanning local repo …')
         counts = scan_bytes(REPO_ROOT)
 
-    markup = {k: v for k, v in counts.items() if k in MARKUP_KEYS}
-    programming = {k: v for k, v in counts.items() if k not in MARKUP_KEYS}
-
-    make_pie_svg(programming, 'Language distribution (programming & scripts)', OUTPUT_PROG)
-    make_pie_svg(markup, 'Markup & docs distribution', OUTPUT_MARK)
-    print('Wrote', OUTPUT_PROG, OUTPUT_MARK)
+    make_donut_svg(counts, 'Language distribution', OUTPUT)
+    print('Wrote', OUTPUT)
