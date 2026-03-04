@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Generate a single language distribution donut-chart SVG from all GitHub repositories via the GitHub API.
 Falls back to scanning the local repository if GH_TOKEN is not set.
@@ -98,18 +97,18 @@ _FALLBACK_PALETTE = [
 # Hatch patterns overlaid on slices for colorblind / print accessibility
 _PATTERN_OVERLAYS = [
     '',                                                                  # 0: solid
-    '<line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 1: diagonal /
-    '<line x1="0" y1="4" x2="8" y2="4" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 2: horizontal
-    '<line x1="4" y1="0" x2="4" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 3: vertical
-    '<line x1="0" y1="8" x2="8" y2="0" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>'
-    '<line x1="0" y1="0" x2="8" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 4: cross-diagonal
-    '<circle cx="4" cy="4" r="1.5" fill="rgba(0,0,0,0.28)"/>',          # 5: dots
-    '<line x1="0" y1="0" x2="8" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 6: diagonal \
-    '<line x1="0" y1="2" x2="8" y2="2" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>'
-    '<line x1="0" y1="6" x2="8" y2="6" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 7: double horizontal
-    '<line x1="2" y1="0" x2="2" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>'
-    '<line x1="6" y1="0" x2="6" y2="8" stroke="rgba(0,0,0,0.22)" stroke-width="1.5"/>',  # 8: double vertical
-    '<rect x="2" y="2" width="4" height="4" fill="none" stroke="rgba(0,0,0,0.22)" stroke-width="1"/>',  # 9: squares
+    '<line x1="0" y1="8" x2="8" y2="0" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 1: diagonal /
+    '<line x1="0" y1="4" x2="8" y2="4" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 2: horizontal
+    '<line x1="4" y1="0" x2="4" y2="8" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 3: vertical
+    '<line x1="0" y1="8" x2="8" y2="0" stroke="var(--overlay-color)" stroke-width="1.5"/>'
+    '<line x1="0" y1="0" x2="8" y2="8" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 4: cross-diagonal
+    '<circle cx="4" cy="4" r="1.5" fill="var(--overlay-color)"/>',          # 5: dots
+    '<line x1="0" y1="0" x2="8" y2="8" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 6: diagonal \
+    '<line x1="0" y1="2" x2="8" y2="2" stroke="var(--overlay-color)" stroke-width="1.5"/>'
+    '<line x1="0" y1="6" x2="8" y2="6" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 7: double horizontal
+    '<line x1="2" y1="0" x2="2" y2="8" stroke="var(--overlay-color)" stroke-width="1.5"/>'
+    '<line x1="6" y1="0" x2="6" y2="8" stroke="var(--overlay-color)" stroke-width="1.5"/>',  # 8: double vertical
+    '<rect x="2" y="2" width="4" height="4" fill="none" stroke="var(--overlay-color)" stroke-width="1"/>',  # 9: squares
 ]
 
 
@@ -277,7 +276,11 @@ def _top_items(counter: dict, n: int = 8):
 
 
 def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
-    """Write an accessible donut-chart SVG to *outpath*."""
+    """Write an accessible donut-chart SVG to *outpath*.
+
+    The generated SVG embeds CSS variables and a `prefers-color-scheme` media
+    query so it automatically adapts to light/dark mode in a single file.
+    """
     total = sum(counter.values())
     svg_id = os.path.splitext(os.path.basename(outpath))[0]
     title_id = f'{svg_id}-title'
@@ -311,19 +314,53 @@ def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
         f'{lang}: {size / total * 100:.1f}%' for lang, size in top
     )
 
+    style = (
+        '<style>'
+        ':root{'
+        '--bg-fill:#f0f0f0;'
+        '--title-fill:#000000;'
+        '--subtitle-fill:#333333;'
+        '--center-fill:white;'
+        '--center-text-main:#444444;'
+        '--center-text-sub:#777777;'
+        '--legend-text-fill:#000000;'
+        '--slice-focus-stroke:#000000;'
+        '--pct-label-inside-fill:#ffffff;'
+        '--slice-edge:white;'
+        '--overlay-color:rgba(0,0,0,0.22);'
+        '}'
+        '@media (prefers-color-scheme: dark){:root{'
+        '--bg-fill:#0b0b0b;'
+        '--title-fill:#ffffff;'
+        '--subtitle-fill:#dddddd;'
+        '--center-fill:#0b0b0b;'
+        '--center-text-main:#ffffff;'
+        '--center-text-sub:#cccccc;'
+        '--legend-text-fill:#ffffff;'
+        '--slice-focus-stroke:#ffffff;'
+        '--pct-label-inside-fill:#ffffff;'
+        '--slice-edge:#0b0b0b;'
+        '--overlay-color:rgba(255,255,255,0.18);'
+        '}}'
+        'text{font-family:sans-serif;} '
+        '.slice:focus{stroke:var(--slice-focus-stroke);stroke-width:3;outline:none} '
+        '.slice{cursor:pointer} '
+        '</style>'
+    )
+
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{width}" height="{height}" '
         f'role="img" aria-labelledby="{title_id} {desc_id}">',
         f'<title id="{title_id}">{html.escape(title)}</title>',
         f'<desc id="{desc_id}">{html.escape(desc_text)}</desc>',
+        style,
         _make_defs(top),
-        '<style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>',
         # Background circle
-        f'<circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="#f0f0f0"/>',
+        f'<circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="var(--bg-fill)"/>',
         # Chart title
         f'<text x="{cx}" y="{cy - r_outer - 14}" font-size="15" font-weight="bold" '
-        f'text-anchor="middle">{html.escape(title)}</text>',
+        f'text-anchor="middle" fill="var(--title-fill)">{html.escape(title)}</text>',
     ]
 
     # Donut slices
@@ -354,7 +391,7 @@ def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
         aria = html.escape(f'{lang}: {pct_label}')
 
         parts.append(
-            f'<path class="slice" d="{d}" fill="url(#p{i})" stroke="white" stroke-width="1.5" '
+            f'<path class="slice" d="{d}" fill="url(#p{i})" stroke="var(--slice-edge)" stroke-width="1.5" '
             f'role="img" aria-label="{aria}" tabindex="0">'
             f'<title>{aria}</title>'
             f'</path>'
@@ -367,7 +404,7 @@ def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
             lx = cx + lr * math.cos(mid)
             ly = cy + lr * math.sin(mid)
             parts.append(
-                f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" fill="#fff" '
+                f'<text x="{lx:.1f}" y="{ly:.1f}" font-size="11" fill="var(--pct-label-inside-fill)" '
                 f'text-anchor="middle" dominant-baseline="middle" '
                 f'aria-hidden="true">{html.escape(pct_label)}</text>'
             )
@@ -376,11 +413,11 @@ def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
 
     # Center label
     parts.append(
-        f'<circle cx="{cx}" cy="{cy}" r="{r_inner}" fill="white"/>'
+        f'<circle cx="{cx}" cy="{cy}" r="{r_inner}" fill="var(--center-fill)"/>'
         f'<text x="{cx}" y="{cy - 8}" font-size="13" font-weight="bold" '
-        f'text-anchor="middle" fill="#444">Languages</text>'
+        f'text-anchor="middle" fill="var(--center-text-main)">Languages</text>'
         f'<text x="{cx}" y="{cy + 12}" font-size="11" '
-        f'text-anchor="middle" fill="#777">{len(top)} shown</text>'
+        f'text-anchor="middle" fill="var(--center-text-sub)">{len(top)} shown</text>'
     )
 
     # Legend
@@ -394,7 +431,7 @@ def make_donut_svg(counter: dict, title: str, outpath: str) -> None:
             f'aria-hidden="true"/>'
         )
         parts.append(
-            f'<text x="{legend_x + 22}" y="{ly + 11}" font-size="13" aria-hidden="true">'
+            f'<text x="{legend_x + 22}" y="{ly + 11}" font-size="13" aria-hidden="true" fill="var(--legend-text-fill)">'
             f'{html.escape(lang)}\u2009{html.escape(pct_label)}</text>'
         )
 
