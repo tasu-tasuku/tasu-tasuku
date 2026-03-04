@@ -83,21 +83,23 @@ def _gh_headers() -> dict:
 
 
 def fetch_all_repo_languages() -> dict:
-    """Aggregate language bytes across all repos owned by the authenticated user."""
+    """Aggregate language bytes across all repos accessible to the authenticated user token."""
     req = _requests
     headers = _gh_headers()
 
+    # Verify token and get authenticated user info
     r = req.get('https://api.github.com/user', headers=headers, timeout=30)
     r.raise_for_status()
-    username = r.json()['login']
+    username = r.json().get('login', '<unknown>')
     print(f'Authenticated as: {username}')
 
     repos, page = [], 1
+    # Use the authenticated user's /user/repos endpoint to list all repos the token can access
     while True:
         r = req.get(
-            f'https://api.github.com/users/{username}/repos',
+            'https://api.github.com/user/repos',
             headers=headers,
-            params={'per_page': 100, 'page': page, 'type': 'owner'},
+            params={'per_page': 100, 'page': page, 'affiliation': 'owner,collaborator,organization_member'},
             timeout=30,
         )
         r.raise_for_status()
@@ -106,11 +108,13 @@ def fetch_all_repo_languages() -> dict:
             break
         repos.extend(data)
         page += 1
-    print(f'Found {len(repos)} repositories')
+    print(f'Found {len(repos)} repositories accessible to token')
 
     totals: dict = defaultdict(int)
     for repo in repos:
-        full_name = repo['full_name']
+        full_name = repo.get('full_name')
+        if not full_name:
+            continue
         r = req.get(
             f'https://api.github.com/repos/{full_name}/languages',
             headers=headers,
@@ -251,7 +255,7 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
         f'<title id="{title_id}">{html.escape(title)}</title>',
         f'<desc id="{desc_id}">{html.escape(desc_text)}</desc>',
         _make_defs(n),
-        '<style>text { font-family: sans-serif; }</style>',
+        '<style>text { font-family: sans-serif; } .slice:focus{stroke:#000; stroke-width:3; outline:none} .slice{cursor:pointer}</style>',
         # Chart title
         f'<text x="{width // 2}" y="22" font-size="15" font-weight="bold" '
         f'text-anchor="middle">{html.escape(title)}</text>',
@@ -275,8 +279,8 @@ def make_pie_svg(counter: dict, title: str, outpath: str) -> None:
         aria = html.escape(f'{lang}: {pct_label}')
 
         parts.append(
-            f'<path d="{d}" fill="url(#p{i})" stroke="white" stroke-width="1.5" '
-            f'role="img" aria-label="{aria}">'
+            f'<path class="slice" d="{d}" fill="url(#p{i})" stroke="white" stroke-width="1.5" '
+            f'role="img" aria-label="{aria}" tabindex="0">'
             f'<title>{aria}</title>'
             f'</path>'
         )
