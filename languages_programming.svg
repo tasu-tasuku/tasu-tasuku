@@ -1,29 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-  width="520" height="220" viewBox="0 0 520 220">
-<style>
-.label, .value, .title {
-  font-family: -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Helvetica, Arial, sans-serif;
-  fill: #374151;
-}
-.title { font-size: 16px; font-weight: 600; }
-.label { font-size: 14px; }
-.value { font-size: 13px; }
-
-/* slice border: visible in both light and dark modes */
-.slice {
-    stroke: rgba(0,0,0,0.85);
-    stroke-width: 2px;
-    stroke-linejoin: round;
-}
-
-@media (prefers-color-scheme: dark) {
-  .label, .value, .title { fill: #E5E7EB; }
-    .slice {
-        stroke: rgba(255,255,255,0.85);
-    }
-}
-</style>
-
-<text x="20" y="24" class="title">Programming Languages</text>
-<path class="slice" d="M 110,110 L 110.00,30.00 A 80,80 0 1,1 53.61,166.75 Z" fill="#F37626"/><path class="slice" d="M 110,110 L 53.61,166.75 A 80,80 0 0,1 41.76,68.24 Z" fill="#00599C"/><path class="slice" d="M 110,110 L 41.76,68.24 A 80,80 0 0,1 76.92,37.16 Z" fill="#3776AB"/><path class="slice" d="M 110,110 L 76.92,37.16 A 80,80 0 0,1 88.97,32.81 Z" fill="#555555"/><path class="slice" d="M 110,110 L 88.97,32.81 A 80,80 0 0,1 98.48,30.83 Z" fill="#e16737"/><path class="slice" d="M 110,110 L 98.48,30.83 A 80,80 0 0,1 110.00,30.00 Z" fill="#9CA3AF"/><rect x="230" y="40" width="12" height="12" fill="#F37626"/><text x="250" y="50" class="label">Jupyter Notebook</text><text x="460" y="50" class="value">62.4%</text><rect x="230" y="66" width="12" height="12" fill="#00599C"/><text x="250" y="76" class="label">C++</text><text x="460" y="76" class="value">21.3%</text><rect x="230" y="92" width="12" height="12" fill="#3776AB"/><text x="250" y="102" class="label">Python</text><text x="460" y="102" class="value">9.5%</text><rect x="230" y="118" width="12" height="12" fill="#555555"/><text x="250" y="128" class="label">C</text><text x="460" y="128" class="value">2.6%</text><rect x="230" y="144" width="12" height="12" fill="#e16737"/><text x="250" y="154" class="label">MATLAB</text><text x="460" y="154" class="value">1.9%</text><rect x="230" y="170" width="12" height="12" fill="#9CA3AF"/><text x="250" y="180" class="label">Other</text><text x="460" y="180" class="value">2.3%</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="140">
+<style>text{font-family:sans-serif}</style>
+<text x="20" y="18" font-size="16" font-weight="bold">Language distribution (programming & scripts)</text>
+<rect x="20" y="30" width="777" height="28" fill="#4e79a7" rx="4" ry="4"/>
+<text x="26" y="49" font-size="12" fill="#fff">Python 99.7%</text>
+<rect x="797" y="30" width="2" height="28" fill="#f28e2b" rx="4" ry="4"/>
+<rect x="799" y="30" width="1" height="28" fill="#e15759" rx="4" ry="4"/>
+<rect x="20" y="88" width="12" height="12" fill="#4e79a7" rx="2" ry="2"/>
+<text x="38" y="99" font-size="12">Python 99.7%</text>
+<rect x="160" y="88" width="12" height="12" fill="#f28e2b" rx="2" ry="2"/>
+<text x="178" y="99" font-size="12">JSON 0.3%</text>
+<rect x="300" y="88" width="12" height="12" fill="#e15759" rx="2" ry="2"/>
+<text x="318" y="99" font-size="12">Other 0.0%</text>
+</svg>
