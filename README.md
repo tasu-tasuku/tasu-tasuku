@@ -14,4 +14,9 @@
 
 ## Tools / ツール
 
-[![Tools](https://skillicons.dev/icons?i=vscode,latex,git,github&theme=light)](https://skillicons.dev)
+[![Tools](https://skillicons.dev/icons?i=git,github,vscode&theme=light)](https://skillicons.dev)
+
+
+## Documentation / ドキュメント作成
+
+[![Documentation](https://skillicons.dev/icons?i=latex&theme=light)](https://skillicons.dev)
