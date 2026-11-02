@@ -278,7 +278,7 @@
 }
 
 .bar-0 {
-  fill: #43A047;
+  fill: #bd3b24;
   transform-origin: 570px 0;
   animation: grow-bar-0 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -298,7 +298,7 @@
 }
 
 .bar-1 {
-  fill: #bd3b24;
+  fill: #3f6a8a;
   transform-origin: 570px 0;
   animation: grow-bar-1 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -318,7 +318,7 @@
 }
 
 .bar-2 {
-  fill: #3f6a8a;
+  fill: #c2ab25;
   transform-origin: 570px 0;
   animation: grow-bar-2 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -338,7 +338,7 @@
 }
 
 .bar-3 {
-  fill: #c2ab25;
+  fill: #216a94;
   transform-origin: 570px 0;
   animation: grow-bar-3 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -358,7 +358,7 @@
 }
 
 .bar-4 {
-  fill: #216a94;
+  fill: #b83e23;
   transform-origin: 570px 0;
   animation: grow-bar-4 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -504,22 +504,22 @@
 <line x1="712.5" y1="85" x2="712.5" y2="292" stroke="var(--grid)" stroke-width="0.75" />
 <line x1="760.0" y1="85" x2="760.0" y2="292" stroke="var(--grid)" stroke-width="0.75" />
 <text x="760.0" y="80" text-anchor="middle" class="font-mono val-text" style="font-size: 9px;">100%</text>
-<g><text x="420" y="112" text-anchor="start" class="font-sans label-text">TeX</text><text x="555" y="112" text-anchor="end" class="font-mono val-text fade-in">68.5%</text><rect class="bar-0" x="570" y="102" width="130.19" height="12" rx="1" fill="#43A047" />
-<rect class="bar-pattern-0" x="570" y="102" width="130.19" height="12" rx="1" fill="url(#pat-1)" role="img" aria-label="TeX: 68.5%" tabindex="0"><title>TeX: 68.5%</title></rect>
+<g><text x="420" y="112" text-anchor="start" class="font-sans label-text">Swift</text><text x="555" y="112" text-anchor="end" class="font-mono val-text fade-in">53.4%</text><rect class="bar-0" x="570" y="102" width="101.50" height="12" rx="1" fill="#bd3b24" />
+<rect class="bar-pattern-0" x="570" y="102" width="101.50" height="12" rx="1" fill="url(#pat-4)" role="img" aria-label="Swift: 53.4%" tabindex="0"><title>Swift: 53.4%</title></rect>
 </g>
-<g><text x="420" y="148" text-anchor="start" class="font-sans label-text">Swift</text><text x="555" y="148" text-anchor="end" class="font-mono val-text fade-in">17.4%</text><rect class="bar-1" x="570" y="138" width="33.00" height="12" rx="1" fill="#bd3b24" />
-<rect class="bar-pattern-1" x="570" y="138" width="33.00" height="12" rx="1" fill="url(#pat-4)" role="img" aria-label="Swift: 17.4%" tabindex="0"><title>Swift: 17.4%</title></rect>
+<g><text x="420" y="148" text-anchor="start" class="font-sans label-text">Python</text><text x="555" y="148" text-anchor="end" class="font-mono val-text fade-in">36.5%</text><rect class="bar-1" x="570" y="138" width="69.40" height="12" rx="1" fill="#3f6a8a" />
+<rect class="bar-pattern-1" x="570" y="138" width="69.40" height="12" rx="1" fill="url(#pat-3)" role="img" aria-label="Python: 36.5%" tabindex="0"><title>Python: 36.5%</title></rect>
 </g>
-<g><text x="420" y="184" text-anchor="start" class="font-sans label-text">Python</text><text x="555" y="184" text-anchor="end" class="font-mono val-text fade-in">11.1%</text><rect class="bar-2" x="570" y="174" width="21.10" height="12" rx="1" fill="#3f6a8a" />
-<rect class="bar-pattern-2" x="570" y="174" width="21.10" height="12" rx="1" fill="url(#pat-3)" role="img" aria-label="Python: 11.1%" tabindex="0"><title>Python: 11.1%</title></rect>
+<g><text x="420" y="184" text-anchor="start" class="font-sans label-text">JavaScript</text><text x="555" y="184" text-anchor="end" class="font-mono val-text fade-in">6.0%</text><rect class="bar-2" x="570" y="174" width="11.38" height="12" rx="1" fill="#c2ab25" />
+<rect class="bar-pattern-2" x="570" y="174" width="11.38" height="12" rx="1" fill="url(#pat-5)" role="img" aria-label="JavaScript: 6.0%" tabindex="0"><title>JavaScript: 6.0%</title></rect>
 </g>
-<g><text x="420" y="220" text-anchor="start" class="font-sans label-text">JavaScript</text><text x="555" y="220" text-anchor="end" class="font-mono val-text fade-in">1.8%</text><rect class="bar-3" x="570" y="210" width="3.34" height="12" rx="1" fill="#c2ab25" />
-<rect class="bar-pattern-3" x="570" y="210" width="3.34" height="12" rx="1" fill="url(#pat-5)" role="img" aria-label="JavaScript: 1.8%" tabindex="0"><title>JavaScript: 1.8%</title></rect>
+<g><text x="420" y="220" text-anchor="start" class="font-sans label-text">CSS</text><text x="555" y="220" text-anchor="end" class="font-mono val-text fade-in">2.8%</text><rect class="bar-3" x="570" y="210" width="5.26" height="12" rx="1" fill="#216a94" />
+<rect class="bar-pattern-3" x="570" y="210" width="5.26" height="12" rx="1" fill="url(#pat-6)" role="img" aria-label="CSS: 2.8%" tabindex="0"><title>CSS: 2.8%</title></rect>
 </g>
-<g><text x="420" y="256" text-anchor="start" class="font-sans label-text">CSS</text><text x="555" y="256" text-anchor="end" class="font-mono val-text fade-in">0.8%</text><rect class="bar-4" x="570" y="246" width="2.00" height="12" rx="1" fill="#216a94" />
-<rect class="bar-pattern-4" x="570" y="246" width="2.00" height="12" rx="1" fill="url(#pat-6)" role="img" aria-label="CSS: 0.8%" tabindex="0"><title>CSS: 0.8%</title></rect>
+<g><text x="420" y="256" text-anchor="start" class="font-sans label-text">HTML</text><text x="555" y="256" text-anchor="end" class="font-mono val-text fade-in">1.1%</text><rect class="bar-4" x="570" y="246" width="2.16" height="12" rx="1" fill="#b83e23" />
+<rect class="bar-pattern-4" x="570" y="246" width="2.16" height="12" rx="1" fill="url(#pat-7)" role="img" aria-label="HTML: 1.1%" tabindex="0"><title>HTML: 1.1%</title></rect>
 </g>
-<g><text x="420" y="292" text-anchor="start" class="font-sans label-text">Other</text><text x="555" y="292" text-anchor="end" class="font-mono val-text fade-in">0.4%</text><rect class="bar-5" x="570" y="282" width="2.00" height="12" rx="1" fill="#718096" />
+<g><text x="420" y="292" text-anchor="start" class="font-sans label-text">Other</text><text x="555" y="292" text-anchor="end" class="font-mono val-text fade-in">0.2%</text><rect class="bar-5" x="570" y="282" width="2.00" height="12" rx="1" fill="#718096" />
 </g>
 <line x1="15" y1="315" x2="785" y2="315" stroke="var(--border)" stroke-width="0.75" />
 <text x="15" y="333" class="font-serif note-text" style="font-style: italic;">* Note: All-time language distribution is measured by bytes of code. Recent activity reflects repositories pushed to within the last 60 days.</text>
