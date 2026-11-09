@@ -80,7 +80,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 304.8809;
+      stroke-dashoffset: 305.6497;
   }
 }
 
@@ -97,7 +97,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 304.8809;
+      stroke-dashoffset: 305.6497;
   }
 }
 
@@ -112,7 +112,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 310.2307;
+      stroke-dashoffset: 309.7105;
   }
 }
 
@@ -129,7 +129,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 310.2307;
+      stroke-dashoffset: 309.7105;
   }
 }
 
@@ -144,7 +144,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 415.3199;
+      stroke-dashoffset: 415.5783;
   }
 }
 
@@ -161,7 +161,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 415.3199;
+      stroke-dashoffset: 415.5783;
   }
 }
 
@@ -176,7 +176,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 430.6934;
+      stroke-dashoffset: 430.4204;
   }
 }
 
@@ -193,7 +193,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 430.6934;
+      stroke-dashoffset: 430.4204;
   }
 }
 
@@ -208,7 +208,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 458.7994;
+      stroke-dashoffset: 458.8568;
   }
 }
 
@@ -225,7 +225,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 458.7994;
+      stroke-dashoffset: 458.8568;
   }
 }
 
@@ -240,7 +240,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 436.2702;
+      stroke-dashoffset: 435.9786;
   }
 }
 
@@ -257,7 +257,7 @@
       stroke-dashoffset: 471.2389;
   }
   to {
-      stroke-dashoffset: 436.2702;
+      stroke-dashoffset: 435.9786;
   }
 }
 
@@ -278,7 +278,7 @@
 }
 
 .bar-0 {
-  fill: #bd3b24;
+  fill: #3f6a8a;
   transform-origin: 570px 0;
   animation: grow-bar-0 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -298,7 +298,7 @@
 }
 
 .bar-1 {
-  fill: #3f6a8a;
+  fill: #43A047;
   transform-origin: 570px 0;
   animation: grow-bar-1 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -318,7 +318,7 @@
 }
 
 .bar-2 {
-  fill: #c2ab25;
+  fill: #bd532b;
   transform-origin: 570px 0;
   animation: grow-bar-2 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
@@ -326,66 +326,6 @@
 .bar-pattern-2 {
   transform-origin: 570px 0;
   animation: grow-bar-2 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-@keyframes grow-bar-3 {
-  from {
-      transform: scaleX(0);
-  }
-  to {
-      transform: scaleX(1);
-  }
-}
-
-.bar-3 {
-  fill: #216a94;
-  transform-origin: 570px 0;
-  animation: grow-bar-3 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-.bar-pattern-3 {
-  transform-origin: 570px 0;
-  animation: grow-bar-3 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-@keyframes grow-bar-4 {
-  from {
-      transform: scaleX(0);
-  }
-  to {
-      transform: scaleX(1);
-  }
-}
-
-.bar-4 {
-  fill: #b83e23;
-  transform-origin: 570px 0;
-  animation: grow-bar-4 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-.bar-pattern-4 {
-  transform-origin: 570px 0;
-  animation: grow-bar-4 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-@keyframes grow-bar-5 {
-  from {
-      transform: scaleX(0);
-  }
-  to {
-      transform: scaleX(1);
-  }
-}
-
-.bar-5 {
-  fill: #718096;
-  transform-origin: 570px 0;
-  animation: grow-bar-5 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
-}
-
-.bar-pattern-5 {
-  transform-origin: 570px 0;
-  animation: grow-bar-5 1.2s cubic-bezier(0.25,1,0.5,1) forwards;
 }
 
 </style>
@@ -451,16 +391,16 @@
 <line x1="15" y1="40" x2="785" y2="40" stroke="var(--border)" stroke-width="0.75" />
 <text x="40" y="68" class="font-serif sub-title">I. OVERALL LANGUAGE USAGE</text>
 <circle class="slice-0" cx="145" cy="185" r="75" fill="none" stroke="#b85a1c" stroke-width="26" stroke-linecap="butt" transform="rotate(-90.00 145 185)"></circle>
-<circle class="slice-pattern-0" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-0)" stroke-width="26" stroke-linecap="butt" transform="rotate(-90.00 145 185)" role="img" aria-label="Jupyter Notebook: 35.3%" tabindex="0"><title>Jupyter Notebook: 35.3%</title></circle>
-<circle class="slice-1" cx="145" cy="185" r="75" fill="none" stroke="#43A047" stroke-width="26" stroke-linecap="butt" transform="rotate(37.09 145 185)"></circle>
-<circle class="slice-pattern-1" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-1)" stroke-width="26" stroke-linecap="butt" transform="rotate(37.09 145 185)" role="img" aria-label="TeX: 34.2%" tabindex="0"><title>TeX: 34.2%</title></circle>
-<circle class="slice-2" cx="145" cy="185" r="75" fill="none" stroke="#2a4e7c" stroke-width="26" stroke-linecap="butt" transform="rotate(160.09 145 185)"></circle>
-<circle class="slice-pattern-2" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-2)" stroke-width="26" stroke-linecap="butt" transform="rotate(160.09 145 185)" role="img" aria-label="C++: 11.9%" tabindex="0"><title>C++: 11.9%</title></circle>
-<circle class="slice-3" cx="145" cy="185" r="75" fill="none" stroke="#3f6a8a" stroke-width="26" stroke-linecap="butt" transform="rotate(202.81 145 185)"></circle>
-<circle class="slice-pattern-3" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-3)" stroke-width="26" stroke-linecap="butt" transform="rotate(202.81 145 185)" role="img" aria-label="Python: 8.6%" tabindex="0"><title>Python: 8.6%</title></circle>
-<circle class="slice-4" cx="145" cy="185" r="75" fill="none" stroke="#bd3b24" stroke-width="26" stroke-linecap="butt" transform="rotate(233.78 145 185)"></circle>
-<circle class="slice-pattern-4" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-4)" stroke-width="26" stroke-linecap="butt" transform="rotate(233.78 145 185)" role="img" aria-label="Swift: 2.6%" tabindex="0"><title>Swift: 2.6%</title></circle>
-<circle class="slice-5" cx="145" cy="185" r="75" fill="none" stroke="#718096" stroke-width="26" stroke-linecap="butt" transform="rotate(243.29 145 185)"></circle>
+<circle class="slice-pattern-0" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-0)" stroke-width="26" stroke-linecap="butt" transform="rotate(-90.00 145 185)" role="img" aria-label="Jupyter Notebook: 35.1%" tabindex="0"><title>Jupyter Notebook: 35.1%</title></circle>
+<circle class="slice-1" cx="145" cy="185" r="75" fill="none" stroke="#43A047" stroke-width="26" stroke-linecap="butt" transform="rotate(36.50 145 185)"></circle>
+<circle class="slice-pattern-1" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-1)" stroke-width="26" stroke-linecap="butt" transform="rotate(36.50 145 185)" role="img" aria-label="TeX: 34.3%" tabindex="0"><title>TeX: 34.3%</title></circle>
+<circle class="slice-2" cx="145" cy="185" r="75" fill="none" stroke="#2a4e7c" stroke-width="26" stroke-linecap="butt" transform="rotate(159.90 145 185)"></circle>
+<circle class="slice-pattern-2" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-2)" stroke-width="26" stroke-linecap="butt" transform="rotate(159.90 145 185)" role="img" aria-label="C++: 11.8%" tabindex="0"><title>C++: 11.8%</title></circle>
+<circle class="slice-3" cx="145" cy="185" r="75" fill="none" stroke="#3f6a8a" stroke-width="26" stroke-linecap="butt" transform="rotate(202.42 145 185)"></circle>
+<circle class="slice-pattern-3" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-3)" stroke-width="26" stroke-linecap="butt" transform="rotate(202.42 145 185)" role="img" aria-label="Python: 8.7%" tabindex="0"><title>Python: 8.7%</title></circle>
+<circle class="slice-4" cx="145" cy="185" r="75" fill="none" stroke="#bd3b24" stroke-width="26" stroke-linecap="butt" transform="rotate(233.60 145 185)"></circle>
+<circle class="slice-pattern-4" cx="145" cy="185" r="75" fill="none" stroke="url(#pat-4)" stroke-width="26" stroke-linecap="butt" transform="rotate(233.60 145 185)" role="img" aria-label="Swift: 2.6%" tabindex="0"><title>Swift: 2.6%</title></circle>
+<circle class="slice-5" cx="145" cy="185" r="75" fill="none" stroke="#718096" stroke-width="26" stroke-linecap="butt" transform="rotate(243.06 145 185)"></circle>
 <circle cx="145" cy="185" r="88" fill="none" stroke="var(--slice-border)" stroke-width="1.5"/>
 <circle cx="145" cy="185" r="62" fill="none" stroke="var(--slice-border)" stroke-width="1.5"/>
 <g class="fade-in"><text x="145" y="180" text-anchor="middle" class="font-serif label-text" style="font-weight: bold;">Languages</text><text x="145" y="197" text-anchor="middle" class="font-serif val-text" style="font-style: italic;">All-Time</text></g>
@@ -468,22 +408,22 @@
 <rect x="245" y="100" width="10" height="10" rx="1" fill="url(#pat-0)" stroke="var(--text-muted)" stroke-width="0.25"/>
 <text x="263" y="108" class="font-sans label-text">Jupyter</text>
 <text x="263" y="121" class="font-sans label-text">Notebook</text>
-<text x="390" y="114" text-anchor="end" class="font-mono val-text">35.3%</text>
+<text x="390" y="114" text-anchor="end" class="font-mono val-text">35.1%</text>
 </g>
 <g class="fade-in"><rect x="245" y="138" width="10" height="10" rx="1" fill="#43A047" />
 <rect x="245" y="138" width="10" height="10" rx="1" fill="url(#pat-1)" stroke="var(--text-muted)" stroke-width="0.25"/>
 <text x="263" y="146" class="font-sans label-text">TeX</text>
-<text x="390" y="146" text-anchor="end" class="font-mono val-text">34.2%</text>
+<text x="390" y="146" text-anchor="end" class="font-mono val-text">34.3%</text>
 </g>
 <g class="fade-in"><rect x="245" y="164" width="10" height="10" rx="1" fill="#2a4e7c" />
 <rect x="245" y="164" width="10" height="10" rx="1" fill="url(#pat-2)" stroke="var(--text-muted)" stroke-width="0.25"/>
 <text x="263" y="172" class="font-sans label-text">C++</text>
-<text x="390" y="172" text-anchor="end" class="font-mono val-text">11.9%</text>
+<text x="390" y="172" text-anchor="end" class="font-mono val-text">11.8%</text>
 </g>
 <g class="fade-in"><rect x="245" y="190" width="10" height="10" rx="1" fill="#3f6a8a" />
 <rect x="245" y="190" width="10" height="10" rx="1" fill="url(#pat-3)" stroke="var(--text-muted)" stroke-width="0.25"/>
 <text x="263" y="198" class="font-sans label-text">Python</text>
-<text x="390" y="198" text-anchor="end" class="font-mono val-text">8.6%</text>
+<text x="390" y="198" text-anchor="end" class="font-mono val-text">8.7%</text>
 </g>
 <g class="fade-in"><rect x="245" y="216" width="10" height="10" rx="1" fill="#bd3b24" />
 <rect x="245" y="216" width="10" height="10" rx="1" fill="url(#pat-4)" stroke="var(--text-muted)" stroke-width="0.25"/>
@@ -492,7 +432,7 @@
 </g>
 <g class="fade-in"><rect x="245" y="242" width="10" height="10" rx="1" fill="#718096" />
 <text x="263" y="250" class="font-sans label-text">Other</text>
-<text x="390" y="250" text-anchor="end" class="font-mono val-text">7.4%</text>
+<text x="390" y="250" text-anchor="end" class="font-mono val-text">7.5%</text>
 </g>
 <line x1="400" y1="55" x2="400" y2="295" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="3,3" />
 <text x="420" y="68" class="font-serif sub-title">II. RECENT ACTIVITY (LAST 60 DAYS)</text>
@@ -504,22 +444,14 @@
 <line x1="712.5" y1="85" x2="712.5" y2="292" stroke="var(--grid)" stroke-width="0.75" />
 <line x1="760.0" y1="85" x2="760.0" y2="292" stroke="var(--grid)" stroke-width="0.75" />
 <text x="760.0" y="80" text-anchor="middle" class="font-mono val-text" style="font-size: 9px;">100%</text>
-<g><text x="420" y="112" text-anchor="start" class="font-sans label-text">Swift</text><text x="555" y="112" text-anchor="end" class="font-mono val-text fade-in">53.4%</text><rect class="bar-0" x="570" y="102" width="101.50" height="12" rx="1" fill="#bd3b24" />
-<rect class="bar-pattern-0" x="570" y="102" width="101.50" height="12" rx="1" fill="url(#pat-4)" role="img" aria-label="Swift: 53.4%" tabindex="0"><title>Swift: 53.4%</title></rect>
+<g><text x="420" y="112" text-anchor="start" class="font-sans label-text">Python</text><text x="555" y="112" text-anchor="end" class="font-mono val-text fade-in">69.3%</text><rect class="bar-0" x="570" y="102" width="131.69" height="12" rx="1" fill="#3f6a8a" />
+<rect class="bar-pattern-0" x="570" y="102" width="131.69" height="12" rx="1" fill="url(#pat-3)" role="img" aria-label="Python: 69.3%" tabindex="0"><title>Python: 69.3%</title></rect>
 </g>
-<g><text x="420" y="148" text-anchor="start" class="font-sans label-text">Python</text><text x="555" y="148" text-anchor="end" class="font-mono val-text fade-in">36.5%</text><rect class="bar-1" x="570" y="138" width="69.40" height="12" rx="1" fill="#3f6a8a" />
-<rect class="bar-pattern-1" x="570" y="138" width="69.40" height="12" rx="1" fill="url(#pat-3)" role="img" aria-label="Python: 36.5%" tabindex="0"><title>Python: 36.5%</title></rect>
+<g><text x="420" y="148" text-anchor="start" class="font-sans label-text">TeX</text><text x="555" y="148" text-anchor="end" class="font-mono val-text fade-in">22.6%</text><rect class="bar-1" x="570" y="138" width="42.93" height="12" rx="1" fill="#43A047" />
+<rect class="bar-pattern-1" x="570" y="138" width="42.93" height="12" rx="1" fill="url(#pat-1)" role="img" aria-label="TeX: 22.6%" tabindex="0"><title>TeX: 22.6%</title></rect>
 </g>
-<g><text x="420" y="184" text-anchor="start" class="font-sans label-text">JavaScript</text><text x="555" y="184" text-anchor="end" class="font-mono val-text fade-in">6.0%</text><rect class="bar-2" x="570" y="174" width="11.38" height="12" rx="1" fill="#c2ab25" />
-<rect class="bar-pattern-2" x="570" y="174" width="11.38" height="12" rx="1" fill="url(#pat-5)" role="img" aria-label="JavaScript: 6.0%" tabindex="0"><title>JavaScript: 6.0%</title></rect>
-</g>
-<g><text x="420" y="220" text-anchor="start" class="font-sans label-text">CSS</text><text x="555" y="220" text-anchor="end" class="font-mono val-text fade-in">2.8%</text><rect class="bar-3" x="570" y="210" width="5.26" height="12" rx="1" fill="#216a94" />
-<rect class="bar-pattern-3" x="570" y="210" width="5.26" height="12" rx="1" fill="url(#pat-6)" role="img" aria-label="CSS: 2.8%" tabindex="0"><title>CSS: 2.8%</title></rect>
-</g>
-<g><text x="420" y="256" text-anchor="start" class="font-sans label-text">HTML</text><text x="555" y="256" text-anchor="end" class="font-mono val-text fade-in">1.1%</text><rect class="bar-4" x="570" y="246" width="2.16" height="12" rx="1" fill="#b83e23" />
-<rect class="bar-pattern-4" x="570" y="246" width="2.16" height="12" rx="1" fill="url(#pat-7)" role="img" aria-label="HTML: 1.1%" tabindex="0"><title>HTML: 1.1%</title></rect>
-</g>
-<g><text x="420" y="292" text-anchor="start" class="font-sans label-text">Other</text><text x="555" y="292" text-anchor="end" class="font-mono val-text fade-in">0.2%</text><rect class="bar-5" x="570" y="282" width="2.00" height="12" rx="1" fill="#718096" />
+<g><text x="420" y="184" text-anchor="start" class="font-sans label-text">MATLAB</text><text x="555" y="184" text-anchor="end" class="font-mono val-text fade-in">8.1%</text><rect class="bar-2" x="570" y="174" width="15.39" height="12" rx="1" fill="#bd532b" />
+<rect class="bar-pattern-2" x="570" y="174" width="15.39" height="12" rx="1" fill="url(#pat-5)" role="img" aria-label="MATLAB: 8.1%" tabindex="0"><title>MATLAB: 8.1%</title></rect>
 </g>
 <line x1="15" y1="315" x2="785" y2="315" stroke="var(--border)" stroke-width="0.75" />
 <text x="15" y="333" class="font-serif note-text" style="font-style: italic;">* Note: All-time language distribution is measured by bytes of code. Recent activity reflects repositories pushed to within the last 60 days.</text>
