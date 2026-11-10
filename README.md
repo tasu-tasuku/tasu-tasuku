@@ -24,4 +24,4 @@
 ### Translation / 翻訳
 
 - **[Cboard](https://github.com/cboard-org/cboard)** — Translating this open-source AAC app into Japanese on Crowdin<br>
-  オープンソースの AAC(コミュニケーション支援)アプリ Cboard の日本語翻訳に Crowdin で参加しています
+  オープンソースの AAC(コミュニケーション支援)アプリ Cboard の日本語翻訳に Crowdin で参加
